@@ -25,6 +25,7 @@ namespace ThemeFileEditor
 
         private void ClearTable(TableLayoutPanel t)
         {
+            t.SuspendLayout();
             t.Controls.Clear();
             t.ColumnStyles.Clear();
             t.RowStyles.Clear();
@@ -34,57 +35,83 @@ namespace ThemeFileEditor
 
             t.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100));
             t.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100));
-            t.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100));
+            t.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 250));
+            t.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 250));
             t.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
-            t.ColumnCount = 4;
+            t.ColumnCount = 5;
+            t.ResumeLayout();
         }
 
 
         private void PopulateSystemColors(TableLayoutPanel t)
         {
+            t.SuspendLayout();
             ClearTable(t);
-            string name = "Background";
-            Color c = Color.FromArgb(255, 255, 255);
-            Control con = null;
+            //string name = "Background";
+            //Color c = Color.FromArgb(255, 255, 255);
+            //Control con = null;
 
-            foreach ()
-            AddRow(t, name, c, con);
+            foreach (string name in ThemeHelper.SystemColorPropertyNames)
+            {
+                AddRow(t, name, ThemeHelper.SystemColorFromSystemName(name), null, null);
+            }
+            
 
 
             //pad the rest with autosize row
             t.RowStyles.Add(new RowStyle(SizeType.AutoSize));
             t.RowCount = t.RowCount + 1;
+            t.ResumeLayout(true);
         }
 
-        private void AddRow(TableLayoutPanel t, string name, Color c, Control con)
+        private void AddRow(TableLayoutPanel t, string name, Color c, Control con, Control con2)
         {
             //add row
-            t.RowStyles.Add(new RowStyle(SizeType.Absolute, 50));
-            t.RowCount = t.RowCount + 1;
+            t.RowStyles.Add(new RowStyle(SizeType.Absolute, 25));
 
             //row content
             Label lbl = new Label();
             lbl.Text = name;
-            t.Controls.Add(lbl, 0, 0);
+            t.Controls.Add(lbl, 0, t.RowCount);
 
             PictureBox p = new PictureBox();
             p.BackColor = c;
-            p.Height = 40;
+            p.Height = 20;
             p.Width = 80;
+            p.BorderStyle = BorderStyle.FixedSingle;
             p.Click += P_Click;
-            t.Controls.Add(p, 1, 0);
+            t.Controls.Add(p, 1, t.RowCount);
 
             if (con == null)
             {
                 con = new TextBox
                 {
                     Text = "The quick brown fox jumped over the lazy dog.",
-                    Multiline = true,
+                    //Multiline = true,
+                    //ScrollBars=ScrollBars.Vertical,
+                    Height = 20,
                     Dock = DockStyle.Fill,
                     BackColor = c
                 };
             }
-            t.Controls.Add(con, 2, 0);
+            t.Controls.Add(con, 2, t.RowCount);
+
+            if (con2 == null)
+            {
+                con2 = new TextBox
+                {
+                    Text = "The quick brown fox jumped over the lazy dog.",
+                    //Multiline = true,
+                    //ScrollBars=ScrollBars.Vertical,
+                    Height = 20,
+                    Dock = DockStyle.Fill,
+                    BackColor = c,
+                    ForeColor=Color.White
+                };
+            }
+            t.Controls.Add(con2, 3, t.RowCount);
+
+            t.RowCount = t.RowCount + 1;
         }
 
         private void P_Click(object sender, EventArgs e)
@@ -100,6 +127,12 @@ namespace ThemeFileEditor
                 p.BackColor = colorDialog1.Color;
             }
             
+        }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            ThemeFile t = new ThemeFile();
+            t.SaveAs(@"C:\temp\systemthemetest.theme");
         }
     }
 }

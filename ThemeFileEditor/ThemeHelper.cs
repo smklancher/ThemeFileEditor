@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -59,7 +60,16 @@ namespace ThemeFileEditor
             return Mapping;
         }
 
-        public static string ThemeColorFromSystemColor(string systemColor)
+        public static List<string> SystemColorPropertyNames
+        {
+            get
+            {
+                return ThemeSystemMapping().Keys.ToList<string>();
+            }
+
+        }
+
+        public static string ThemeNameFromSystemName(string systemColor)
         {
             ThemeSystemMapping().TryGetValue(systemColor, out string val);
             if (String.IsNullOrEmpty(val))
@@ -72,7 +82,7 @@ namespace ThemeFileEditor
             }
         }
 
-        public static string SystemColorFromThemeColor(string themeColor)
+        public static string SystemNameFromThemeName(string themeColor)
         {
             var result = ThemeSystemMapping()
                 .GroupBy(x => x.Value, x => x.Key)
@@ -87,6 +97,48 @@ namespace ThemeFileEditor
             {
                 return val;
             }
+        }
+
+        public static Color SystemColorFromSystemName(string systemColor)
+        {
+            var t = typeof(SystemColors);
+
+            var prop=t.GetProperty(systemColor);
+
+            if (prop!=null)
+            {
+                return (Color)prop.GetValue(null);
+            }
+
+            Trace.WriteLine($"Invalid property for system color name {systemColor}");
+            return Color.White;
+        }
+
+        public static string ColorToRgbSpaced(Color c)
+        {
+            return $"{c.R.ToString()} {c.G.ToString()} {c.B.ToString()}";
+        }
+
+        public static Color RgbSpacedToColor(string c)
+        {
+            string[] colors = c.Split(' ');
+            if (colors.Length != 3)
+            {
+                throw new FormatException($"RbgSpacedColor should be ### ### ###. Was: {c}");
+            }
+
+            Color temp = Color.White;
+
+            try
+            {
+                temp = Color.FromArgb(Int32.Parse(colors[0]), Int32.Parse(colors[1]), Int32.Parse(colors[2]));
+            }
+            catch (Exception ex)
+            {
+
+                throw new FormatException($"RbgSpacedColor should be ### ### ###. Was: {c}", ex);
+            }
+            return temp;
         }
     }
 }

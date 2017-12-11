@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.SaveButton = new System.Windows.Forms.Button();
-            this.OpenButton = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.SaveButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.OpenButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -60,9 +60,19 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel1);
-            this.splitContainer1.Size = new System.Drawing.Size(461, 427);
-            this.splitContainer1.SplitterDistance = 137;
+            this.splitContainer1.Size = new System.Drawing.Size(777, 460);
+            this.splitContainer1.SplitterDistance = 62;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(313, 14);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox1.Size = new System.Drawing.Size(376, 39);
+            this.textBox1.TabIndex = 4;
+            this.textBox1.Text = resources.GetString("textBox1.Text");
             // 
             // SaveButton
             // 
@@ -72,26 +82,7 @@
             this.SaveButton.TabIndex = 1;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
-            // 
-            // OpenButton
-            // 
-            this.OpenButton.Location = new System.Drawing.Point(12, 12);
-            this.OpenButton.Name = "OpenButton";
-            this.OpenButton.Size = new System.Drawing.Size(75, 23);
-            this.OpenButton.TabIndex = 0;
-            this.OpenButton.Text = "Open";
-            this.OpenButton.UseVisualStyleBackColor = true;
-            this.OpenButton.Click += new System.EventHandler(this.OpenButton_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(191, 41);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(136, 87);
-            this.textBox1.TabIndex = 4;
-            this.textBox1.Text = resources.GetString("textBox1.Text");
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // button1
             // 
@@ -111,27 +102,37 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "label1";
             // 
+            // OpenButton
+            // 
+            this.OpenButton.Location = new System.Drawing.Point(12, 12);
+            this.OpenButton.Name = "OpenButton";
+            this.OpenButton.Size = new System.Drawing.Size(75, 23);
+            this.OpenButton.TabIndex = 0;
+            this.OpenButton.Text = "Open";
+            this.OpenButton.UseVisualStyleBackColor = true;
+            this.OpenButton.Click += new System.EventHandler(this.OpenButton_Click);
+            // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel1.AutoScroll = true;
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 72.19731F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.80269F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 237F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 242F));
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.79021F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.20979F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(461, 286);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(777, 394);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(461, 427);
+            this.ClientSize = new System.Drawing.Size(777, 460);
             this.Controls.Add(this.splitContainer1);
             this.Name = "Form1";
             this.Text = "ThemeFileEditor";
