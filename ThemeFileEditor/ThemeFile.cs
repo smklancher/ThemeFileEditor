@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,20 +47,39 @@ namespace ThemeFileEditor
             // then overwrite colors from system
             foreach (string name in ThemeHelper.SystemColorPropertyNames)
             {
-                string tname = ThemeHelper.ThemeNameFromSystemName(name);
-                if (!String.IsNullOrEmpty(tname))
-                {
-                    Colors[tname] = ThemeHelper.ColorToRgbSpaced(ThemeHelper.SystemColorFromSystemName(name));
-                } else
-                {
-                    var key = Colors.First();
-                    if (key != null)
-                    {
-                        key.Comments.Add($"No theme property known for system name {name}");
-                    }
-                }
-                
+                SetColor(name, ThemeHelper.SystemColorFromSystemName(name));
+
             }
+        }
+
+        public void SetColor(string name, Color c)
+        {
+            string tname = ThemeHelper.ThemeNameFromSystemName(name);
+            if (!String.IsNullOrEmpty(tname))
+            {
+                Colors[tname] = ThemeHelper.ColorToRgbSpaced(c);
+            }
+            else
+            {
+                var key = Colors.First();
+                if (key != null)
+                {
+                    key.Comments.Add($"No theme property known for system name {name}");
+                }
+            }
+        }
+
+        public bool TryGetColor(string name, out Color c)
+        {
+            string tname = ThemeHelper.ThemeNameFromSystemName(name);
+            if (!String.IsNullOrEmpty(tname))
+            {
+                c=ThemeHelper.RgbSpacedToColor(Colors[tname]);
+                return true;
+            }
+
+            c = new Color();
+            return false;
         }
 
         public void Save()
@@ -88,6 +108,8 @@ namespace ThemeFileEditor
             // Restore original file name
             FileName = originalFilename;
         }
+
+        
 
         
     }

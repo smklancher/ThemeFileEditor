@@ -12,13 +12,20 @@ namespace ThemeFileEditor
 {
     public partial class Form1 : Form
     {
+        private ThemeFile SystemTheme;
+        private ThemeFile ActiveFile;
+
         public Form1()
         {
             InitializeComponent();
+            SystemTheme = new ThemeFile();
+            ActiveFile = SystemTheme;
         }
 
         private void OpenButton_Click(object sender, EventArgs e)
         {
+
+            SystemTheme = new ThemeFile();
             PopulateSystemColors(tableLayoutPanel1);
         }
 
@@ -79,7 +86,8 @@ namespace ThemeFileEditor
             p.Height = 20;
             p.Width = 80;
             p.BorderStyle = BorderStyle.FixedSingle;
-            p.Click += P_Click;
+            p.Tag = name;
+            p.Click += ChangeColor;
             t.Controls.Add(p, 1, t.RowCount);
 
             if (con == null)
@@ -114,7 +122,7 @@ namespace ThemeFileEditor
             t.RowCount = t.RowCount + 1;
         }
 
-        private void P_Click(object sender, EventArgs e)
+        private void ChangeColor(object sender, EventArgs e)
         {
             PictureBox p = (PictureBox)sender;
 
@@ -125,6 +133,8 @@ namespace ThemeFileEditor
             {
                 // Set form background to the selected color.
                 p.BackColor = colorDialog1.Color;
+
+                ActiveFile.SetColor(p.Tag.ToString(), p.BackColor);
             }
             
         }
@@ -133,6 +143,17 @@ namespace ThemeFileEditor
         {
             ThemeFile t = new ThemeFile();
             t.SaveAs(@"C:\temp\systemthemetest.theme");
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            PopulateSystemColors(tableLayoutPanel1);
+        }
+
+        private void ApplyButton_Click(object sender, EventArgs e)
+        {
+            ActiveFile.Apply();
+            SystemTheme = new ThemeFile();
         }
     }
 }

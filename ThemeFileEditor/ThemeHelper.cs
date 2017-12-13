@@ -20,7 +20,7 @@ namespace ThemeFileEditor
         public static Dictionary<string, string> ThemeSystemMapping()
         {
             if (Mapping == null)
-            {
+            {   //http://www.temblast.com/dbplot/color5.htm
                 var x = new Dictionary<string, string>();
                 x.Add(nameof(SystemColors.ActiveBorder), "ActiveBorder"); //same
                 x.Add(nameof(SystemColors.ActiveCaption), "ActiveTitle");
@@ -30,9 +30,9 @@ namespace ThemeFileEditor
                 x.Add(nameof(SystemColors.ButtonHighlight), "ButtonHilight");
                 x.Add(nameof(SystemColors.ButtonShadow), "ButtonShadow"); //same
                 x.Add(nameof(SystemColors.Control), null);
-                x.Add(nameof(SystemColors.ControlDark), null);
+                x.Add(nameof(SystemColors.ControlDark), null);                      // ButtonDkShadow?
                 x.Add(nameof(SystemColors.ControlDarkDark), null);
-                x.Add(nameof(SystemColors.ControlLight), null);
+                x.Add(nameof(SystemColors.ControlLight), null);                     // ButtonAlternateFace
                 x.Add(nameof(SystemColors.ControlLightLight), null);
                 x.Add(nameof(SystemColors.ControlText), null);
                 x.Add(nameof(SystemColors.Desktop), "Background");
@@ -41,15 +41,15 @@ namespace ThemeFileEditor
                 x.Add(nameof(SystemColors.GrayText), "GrayText"); //same
                 x.Add(nameof(SystemColors.Highlight), "Hilight");
                 x.Add(nameof(SystemColors.HighlightText), "HilightText");
-                x.Add(nameof(SystemColors.HotTrack), null);
+                x.Add(nameof(SystemColors.HotTrack), null);                         // HotTrackingColor?
                 x.Add(nameof(SystemColors.InactiveBorder), "InactiveBorder"); //same
                 x.Add(nameof(SystemColors.InactiveCaption), "InactiveTitle");
                 x.Add(nameof(SystemColors.InactiveCaptionText), "InactiveTitleText");
                 x.Add(nameof(SystemColors.Info), "InfoWindow");
                 x.Add(nameof(SystemColors.InfoText), "InfoText"); //same
                 x.Add(nameof(SystemColors.Menu), "Menu"); //same
-                x.Add(nameof(SystemColors.MenuBar), null);
-                x.Add(nameof(SystemColors.MenuHighlight), null);
+                x.Add(nameof(SystemColors.MenuBar), null);                          // same?
+                x.Add(nameof(SystemColors.MenuHighlight), null);                    // MenuHilight?
                 x.Add(nameof(SystemColors.MenuText), "MenuText"); //same
                 x.Add(nameof(SystemColors.ScrollBar), "ScrollBar"); //same
                 x.Add(nameof(SystemColors.Window), "Window"); //same
@@ -109,6 +109,8 @@ namespace ThemeFileEditor
             {
                 return (Color)prop.GetValue(null);
             }
+            // TODO: check for color from HKEY_CURRENT_USER\Control Panel\Colors
+            // Applies to HotTrackingColor, GradientActiveTitle, GradientInactiveTitle, MenuHilight, MenuBar
 
             Trace.WriteLine($"Invalid property for system color name {systemColor}");
             return Color.White;
