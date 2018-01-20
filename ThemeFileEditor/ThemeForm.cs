@@ -10,24 +10,28 @@ using System.Windows.Forms;
 
 namespace ThemeFileEditor
 {
-    public partial class Form1 : Form
+    public partial class ThemeForm : Form
     {
-        private ThemeFile SystemTheme;
         private ThemeFile ActiveFile;
 
-        public Form1()
+        public ThemeForm()
         {
             InitializeComponent();
-            SystemTheme = new ThemeFile();
-            ActiveFile = SystemTheme;
+            ActiveFile = new ThemeFile();
         }
 
-        private void OpenButton_Click(object sender, EventArgs e)
+        public ThemeForm(string themeFile)
         {
+            InitializeComponent();
+            ActiveFile = new ThemeFile(themeFile);
+        }
 
-            SystemTheme = new ThemeFile();
+        #region Display
+        public void RefreshThemeDisplay()
+        {
             PopulateSystemColors(tableLayoutPanel1);
         }
+
 
 
         private void ClearTable(TableLayoutPanel t)
@@ -62,7 +66,7 @@ namespace ThemeFileEditor
             {
                 AddRow(t, name, ThemeHelper.SystemColorFromSystemName(name), null, null);
             }
-            
+
 
 
             //pad the rest with autosize row
@@ -114,13 +118,17 @@ namespace ThemeFileEditor
                     Height = 20,
                     Dock = DockStyle.Fill,
                     BackColor = c,
-                    ForeColor=Color.White
+                    ForeColor = Color.White
                 };
             }
             t.Controls.Add(con2, 3, t.RowCount);
 
             t.RowCount = t.RowCount + 1;
         }
+        #endregion
+
+
+
 
         private void ChangeColor(object sender, EventArgs e)
         {
@@ -147,13 +155,31 @@ namespace ThemeFileEditor
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            PopulateSystemColors(tableLayoutPanel1);
+            RefreshThemeDisplay();
         }
 
         private void ApplyButton_Click(object sender, EventArgs e)
         {
             ActiveFile.Apply();
-            SystemTheme = new ThemeFile();
         }
+
+        #region FileActions
+
+        public void Save()
+        {
+            ActiveFile.Save();
+        }
+
+        public void SaveAs(string fileName)
+        {
+            ActiveFile.SaveAs(fileName);
+        }
+
+        public void Apply()
+        {
+            ActiveFile.Apply();
+        }
+
+        #endregion
     }
 }

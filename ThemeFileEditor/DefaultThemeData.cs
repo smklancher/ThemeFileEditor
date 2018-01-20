@@ -14,25 +14,25 @@ namespace ThemeFileEditor
 
 [Theme]
 ; High Contrast White - IDS_THEME_DISPLAYNAME_HCWHITE
-DisplayName=Custom
-ThemeId={317DB6C3-AD2E-4713-8FF5-297D1036EDA7}
+;DisplayName=NewTheme
+;ThemeId={317DB6C3-AD2E-4713-8FF5-297D1036EDA7}
 
 ; Computer - SHIDI_SERVER
-[CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\DefaultIcon]
-DefaultValue=%SystemRoot%\System32\imageres.dll,-109
+;[CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\DefaultIcon]
+;DefaultValue=%SystemRoot%\System32\imageres.dll,-109
 
 ; UsersFiles - SHIDI_USERFILES
-[CLSID\{59031A47-3F72-44A7-89C5-5595FE6B30EE}\DefaultIcon]
-DefaultValue=%SystemRoot%\System32\imageres.dll,-123
+;[CLSID\{59031A47-3F72-44A7-89C5-5595FE6B30EE}\DefaultIcon]
+;DefaultValue=%SystemRoot%\System32\imageres.dll,-123
 
 ; Network - SHIDI_MYNETWORK
-[CLSID\{F02C1A0D-BE21-4350-88B0-7367FC96EF3C}\DefaultIcon]
-DefaultValue=%SystemRoot%\System32\imageres.dll,-25
+;[CLSID\{F02C1A0D-BE21-4350-88B0-7367FC96EF3C}\DefaultIcon]
+;DefaultValue=%SystemRoot%\System32\imageres.dll,-25
 
 ; Recycle Bin - SHIDI_RECYCLERFULL SHIDI_RECYCLER
-[CLSID\{645FF040-5081-101B-9F08-00AA002F954E}\DefaultIcon]
-Full=%SystemRoot%\System32\imageres.dll,-54
-Empty=%SystemRoot%\System32\imageres.dll,-55
+;[CLSID\{645FF040-5081-101B-9F08-00AA002F954E}\DefaultIcon]
+;Full=%SystemRoot%\System32\imageres.dll,-54
+;Empty=%SystemRoot%\System32\imageres.dll,-55
 
 [Control Panel\Colors]
 ActiveTitle=47 52 63
@@ -68,29 +68,9 @@ GradientInactiveTitle=47 52 63
 MenuHilight=66 131 222
 MenuBar=59 66 80
 
-[Control Panel\Cursors]
-Arrow=%SystemRoot%\cursors\arrow_r.cur
-Help=%SystemRoot%\cursors\help_r.cur
-AppStarting=%SystemRoot%\cursors\wait_r.cur
-Wait=%SystemRoot%\cursors\busy_r.cur
-NWPen=%SystemRoot%\cursors\pen_r.cur
-No=%SystemRoot%\cursors\no_r.cur
-SizeNS=%SystemRoot%\cursors\size4_r.cur
-SizeWE=%SystemRoot%\cursors\size3_r.cur
-Crosshair=%SystemRoot%\cursors\cross_r.cur
-IBeam=%SystemRoot%\cursors\beam_r.cur
-SizeNWSE=%SystemRoot%\cursors\size2_r.cur
-SizeNESW=%SystemRoot%\cursors\size1_r.cur
-SizeAll=%SystemRoot%\cursors\move_r.cur
-UpArrow=%SystemRoot%\cursors\up_r.cur
-DefaultValue=Windows Black
-Link=
-
 [Control Panel\Desktop]
-Wallpaper=DesktopBackground\untitled.png
-Pattern=
-MultimonBackgrounds=0
-PicturePosition=4
+TileWallpaper=0
+WallpaperStyle=10
 
 [VisualStyles]
 Path=%SystemRoot%\Resources\Themes\Aero\AeroLite.msstyles

@@ -103,7 +103,10 @@ namespace ThemeFileEditor
             // Save as temp file and execute
             SaveAs(tempfile);
             Trace.WriteLine($"Applying theme via temp file");
-            Process.Start(tempfile);
+            var p=Process.Start(tempfile);
+
+            //var t = new ApplyTheme();
+            //t.SwitchTheme(tempfile);
 
             // Restore original file name
             FileName = originalFilename;
