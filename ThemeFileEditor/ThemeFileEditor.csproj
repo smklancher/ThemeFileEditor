@@ -59,7 +59,7 @@
     <Compile Include="ThemeEditor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MDIParent1.Designer.cs">
+    <Compile Include="ThemeEditor.Designer.cs">
       <DependentUpon>ThemeEditor.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
