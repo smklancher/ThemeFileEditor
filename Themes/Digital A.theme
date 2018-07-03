@@ -1,0 +1,100 @@
+; Copyright © Microsoft Corp.
+
+[Theme]
+; High Contrast Black - IDS_THEME_DISPLAYNAME_HCBLACK
+DisplayName=Digital Art
+ThemeId={D84C3D3B-70E1-4E6F-8766-F779D7C15187}
+
+; Computer - SHIDI_SERVER
+[CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\DefaultIcon]
+DefaultValue=%SystemRoot%\System32\imageres.dll,-109
+
+; UsersFiles - SHIDI_USERFILES
+[CLSID\{59031A47-3F72-44A7-89C5-5595FE6B30EE}\DefaultIcon]
+DefaultValue=%SystemRoot%\System32\imageres.dll,-123
+
+; Network - SHIDI_MYNETWORK
+[CLSID\{F02C1A0D-BE21-4350-88B0-7367FC96EF3C}\DefaultIcon]
+DefaultValue=%SystemRoot%\System32\imageres.dll,-25
+
+; Recycle Bin - SHIDI_RECYCLERFULL SHIDI_RECYCLER
+[CLSID\{645FF040-5081-101B-9F08-00AA002F954E}\DefaultIcon]
+Full=%SystemRoot%\System32\imageres.dll,-54
+Empty=%SystemRoot%\System32\imageres.dll,-55
+
+[Control Panel\Colors]
+ActiveTitle=30 34 33
+Background=0 0 0
+ButtonFace=30 34 33
+ButtonText=190 158 111
+GrayText=190 158 111
+Hilight=142 187 184
+HilightText=30 34 33
+HotTrackingColor=190 158 111
+InactiveTitle=30 34 33
+InactiveTitleText=190 158 111
+TitleText=190 158 111
+Window=55 62 60
+WindowText=190 158 111
+Scrollbar=0 0 0
+Menu=0 0 0
+WindowFrame=255 255 255
+MenuText=255 255 255
+ActiveBorder=255 255 0
+InactiveBorder=0 128 0
+AppWorkspace=0 0 0
+ButtonShadow=128 128 128
+ButtonHilight=192 192 192
+ButtonDkShadow=255 255 255
+ButtonLight=255 255 255
+InfoText=255 255 255
+InfoWindow=0 0 0
+ButtonAlternateFace=192 192 192
+GradientActiveTitle=128 0 128
+GradientInactiveTitle=0 128 0
+MenuHilight=128 0 128
+MenuBar=0 0 0
+
+[Control Panel\Cursors]
+Arrow=%SystemRoot%\Cursors\Gold\GGRegular.ani
+Help=%SystemRoot%\Cursors\Gold\GGHelp.ani
+AppStarting=%SystemRoot%\Cursors\Gold\Gold Galoo Working In Background.ani
+Wait=%SystemRoot%\Cursors\Gold\GG Busy.ani
+NWPen=%SystemRoot%\Cursors\Gold\Gold Galoo Ink Pen.ani
+No=%SystemRoot%\Cursors\Gold\GG Denied.ani
+SizeNS=%SystemRoot%\Cursors\Gold\GG Vertical Resize.ani
+SizeWE=%SystemRoot%\Cursors\Gold\GG Horizontal Resize.ani
+Crosshair=%SystemRoot%\Cursors\Gold\Gold Galoo Precision.ani
+IBeam=%SystemRoot%\Cursors\Gold\Gold Galoo Ibeam.ani
+SizeNWSE=%SystemRoot%\Cursors\Gold\GG Resize Top Left Corner.ani
+SizeNESW=%SystemRoot%\Cursors\Gold\GG Top RIght Corner Resize.ani
+SizeAll=%SystemRoot%\Cursors\Gold\Gold Galoo Precision.ani
+UpArrow=%SystemRoot%\Cursors\Gold\Gold Galoo Alt Select.ani
+DefaultValue=Gold
+Hand=%SystemRoot%\Cursors\Gold\GG Link Arrow.ani
+Link=
+
+[Control Panel\Desktop]
+Wallpaper=DesktopBackground\digital art.jpg
+Pattern=
+MultimonBackgrounds=0
+PicturePosition=4
+
+[VisualStyles]
+Path=%SystemRoot%\Resources\Themes\Aero\AeroLite.msstyles
+ColorStyle=NormalColor
+Size=NormalSize
+HighContrast=3
+ColorizationColor=0X7F000000
+AutoColorization=0
+VisualStyleVersion=10
+
+[boot]
+SCRNSAVE.EXE=
+
+[MasterThemeSelector]
+MTSM=RJSPBS
+
+[Sounds]
+; IDS_SCHEME_DEFAULT
+SchemeName=@mmres.dll,-800

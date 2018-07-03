@@ -1,0 +1,98 @@
+; Copyright © Microsoft Corp.
+
+[Theme]
+; High Contrast #2 - IDS_THEME_DISPLAYNAME_HC2
+DisplayName=SubZero Dragon
+ThemeId={BE81C639-9A57-4083-8B8D-F1EF17C66CB7}
+
+; Computer - SHIDI_SERVER
+[CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\DefaultIcon]
+DefaultValue=%SystemRoot%\System32\imageres.dll,-109
+
+; UsersFiles - SHIDI_USERFILES
+[CLSID\{59031A47-3F72-44A7-89C5-5595FE6B30EE}\DefaultIcon]
+DefaultValue=%SystemRoot%\System32\imageres.dll,-123
+
+; Network - SHIDI_MYNETWORK
+[CLSID\{F02C1A0D-BE21-4350-88B0-7367FC96EF3C}\DefaultIcon]
+DefaultValue=%SystemRoot%\System32\imageres.dll,-25
+
+; Recycle Bin - SHIDI_RECYCLERFULL SHIDI_RECYCLER
+[CLSID\{645FF040-5081-101B-9F08-00AA002F954E}\DefaultIcon]
+Full=%SystemRoot%\System32\imageres.dll,-54
+Empty=%SystemRoot%\System32\imageres.dll,-55
+
+[Control Panel\Colors]
+ActiveTitle=26 26 26
+Background=25 25 25
+ButtonFace=22 22 22
+ButtonText=0 164 166
+GrayText=0 147 202
+Hilight=40 42 42
+HilightText=0 185 185
+HotTrackingColor=0 215 215
+InactiveTitle=20 20 20
+InactiveTitleText=80 95 99
+TitleText=0 183 255
+Window=1 13 21
+WindowText=0 183 255
+Scrollbar=28 30 30
+Menu=27 29 29
+WindowFrame=17 17 17
+MenuText=0 183 255
+ActiveBorder=26 26 26
+InactiveBorder=20 20 20
+AppWorkspace=29 30 30
+ButtonShadow=25 25 25
+ButtonHilight=31 33 33
+ButtonDkShadow=0 0 0
+ButtonLight=31 33 33
+InfoText=0 183 255
+InfoWindow=26 26 26
+ButtonAlternateFace=28 30 30
+GradientActiveTitle=26 26 26
+GradientInactiveTitle=20 20 20
+MenuHilight=31 33 33
+MenuBar=28 30 30
+
+[Control Panel\Cursors]
+Arrow=%SystemRoot%\cursors\aero_arrow.cur
+Help=%SystemRoot%\cursors\aero_helpsel.cur
+AppStarting=%SystemRoot%\cursors\aero_working.ani
+Wait=%SystemRoot%\cursors\aero_busy.ani
+NWPen=%SystemRoot%\cursors\aero_pen.cur
+No=%SystemRoot%\cursors\aero_unavail.cur
+SizeNS=%SystemRoot%\cursors\aero_ns.cur
+SizeWE=%SystemRoot%\cursors\aero_ew.cur
+SizeNWSE=%SystemRoot%\cursors\aero_nwse.cur
+SizeNESW=%SystemRoot%\cursors\aero_nesw.cur
+SizeAll=%SystemRoot%\cursors\aero_move.cur
+UpArrow=%SystemRoot%\cursors\aero_up.cur
+DefaultValue=Windows Aero
+Hand=%SystemRoot%\cursors\aero_link.cur
+Link=
+
+[Control Panel\Desktop]
+Wallpaper=DesktopBackground\abstract_blue_black_minimalistic_dragons_carbon_fiber_background_1920x1080_wallpaper_wallpaper_2560x1440_www.wall321.com.jpg
+Pattern=
+MultimonBackgrounds=0
+PicturePosition=4
+
+[VisualStyles]
+Path=%SystemRoot%\Resources\Themes\Aero\AeroLite.msstyles
+ColorStyle=NormalColor
+Size=NormalSize
+HighContrast=2
+ColorizationColor=0
+AutoColorization=0
+VisualStyleVersion=10
+
+[boot]
+SCRNSAVE.EXE=
+
+[MasterThemeSelector]
+MTSM=RJSPBS
+
+[Sounds]
+; IDS_SCHEME_DEFAULT
+SchemeName=@mmres.dll,-800

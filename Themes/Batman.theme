@@ -1,0 +1,100 @@
+; Copyright © Microsoft Corp.
+
+[Theme]
+; High Contrast Black - IDS_THEME_DISPLAYNAME_HCBLACK
+DisplayName=Batman
+ThemeId={A21A6818-91A3-47E5-9F4E-6A4DFA126D91}
+
+; Computer - SHIDI_SERVER
+[CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\DefaultIcon]
+DefaultValue=%SystemRoot%\System32\imageres.dll,-109
+
+; UsersFiles - SHIDI_USERFILES
+[CLSID\{59031A47-3F72-44A7-89C5-5595FE6B30EE}\DefaultIcon]
+DefaultValue=%SystemRoot%\System32\imageres.dll,-123
+
+; Network - SHIDI_MYNETWORK
+[CLSID\{F02C1A0D-BE21-4350-88B0-7367FC96EF3C}\DefaultIcon]
+DefaultValue=%SystemRoot%\System32\imageres.dll,-25
+
+; Recycle Bin - SHIDI_RECYCLERFULL SHIDI_RECYCLER
+[CLSID\{645FF040-5081-101B-9F08-00AA002F954E}\DefaultIcon]
+Full=%SystemRoot%\System32\imageres.dll,-54
+Empty=%SystemRoot%\System32\imageres.dll,-55
+
+[Control Panel\Colors]
+ActiveTitle=20 20 20
+Background=0 0 0
+ButtonFace=5 10 20
+ButtonText=35 122 149
+GrayText=125 125 125
+Hilight=115 115 115
+HilightText=30 30 30
+HotTrackingColor=35 122 149
+InactiveTitle=20 20 20
+InactiveTitleText=125 125 125
+TitleText=125 125 125
+Window=15 23 36
+WindowText=35 122 149
+Scrollbar=0 0 0
+Menu=0 0 0
+WindowFrame=255 255 255
+MenuText=255 255 255
+ActiveBorder=255 255 0
+InactiveBorder=0 128 0
+AppWorkspace=0 0 0
+ButtonShadow=128 128 128
+ButtonHilight=192 192 192
+ButtonDkShadow=255 255 255
+ButtonLight=255 255 255
+InfoText=255 255 255
+InfoWindow=0 0 0
+ButtonAlternateFace=192 192 192
+GradientActiveTitle=128 0 128
+GradientInactiveTitle=0 128 0
+MenuHilight=128 0 128
+MenuBar=0 0 0
+
+[Control Panel\Cursors]
+Arrow=%SystemRoot%\Cursors\NewCursors\Normal_Select_Arrow_2.cur
+Help=%SystemRoot%\Cursors\NewCursors\Help_Select.cur
+AppStarting=%SystemRoot%\Cursors\NewCursors\Working_In_Background.cur
+Wait=%SystemRoot%\Cursors\NewCursors\Busy.cur
+NWPen=%SystemRoot%\Cursors\NewCursors\HandWriting.cur
+No=%SystemRoot%\Cursors\NewCursors\Unavailable.cur
+SizeNS=%SystemRoot%\Cursors\NewCursors\Vertical_Resize.cur
+SizeWE=%SystemRoot%\Cursors\NewCursors\Horizontal_Resize.cur
+Crosshair=%SystemRoot%\Cursors\NewCursors\Precision_Select.cur
+IBeam=%SystemRoot%\Cursors\NewCursors\Text_Select.cur
+SizeNWSE=%SystemRoot%\Cursors\NewCursors\Diagonal_Resize_1.cur
+SizeNESW=%SystemRoot%\Cursors\NewCursors\Diagonal_Resize_2.cur
+SizeAll=%SystemRoot%\Cursors\NewCursors\Move.cur
+UpArrow=%SystemRoot%\Cursors\NewCursors\Alternate_Select.cur
+DefaultValue=NewCursors
+Hand=%SystemRoot%\Cursors\NewCursors\Normal_Select_Arrow.cur
+Link=
+
+[Control Panel\Desktop]
+Wallpaper=DesktopBackground\batman.jpg
+Pattern=
+MultimonBackgrounds=0
+PicturePosition=4
+
+[VisualStyles]
+Path=%SystemRoot%\Resources\Themes\Aero\AeroLite.msstyles
+ColorStyle=NormalColor
+Size=NormalSize
+HighContrast=3
+ColorizationColor=0X7F000000
+AutoColorization=0
+VisualStyleVersion=10
+
+[boot]
+SCRNSAVE.EXE=
+
+[MasterThemeSelector]
+MTSM=RJSPBS
+
+[Sounds]
+; IDS_SCHEME_DEFAULT
+SchemeName=Windows Default

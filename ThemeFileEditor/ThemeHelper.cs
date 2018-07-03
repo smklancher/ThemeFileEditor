@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ThemeFileEditor
 {
-    class ThemeHelper
+    public static class ThemeHelper
     {
         private static Dictionary<string, string> Mapping;
 

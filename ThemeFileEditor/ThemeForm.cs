@@ -29,7 +29,7 @@ namespace ThemeFileEditor
         #region Display
         public void RefreshThemeDisplay()
         {
-            PopulateSystemColors(tableLayoutPanel1);
+            PopulateColors(tableLayoutPanel1);
         }
 
 
@@ -54,7 +54,7 @@ namespace ThemeFileEditor
         }
 
 
-        private void PopulateSystemColors(TableLayoutPanel t)
+        private void PopulateColors(TableLayoutPanel t)
         {
             t.SuspendLayout();
             ClearTable(t);
@@ -64,7 +64,19 @@ namespace ThemeFileEditor
 
             foreach (string name in ThemeHelper.SystemColorPropertyNames)
             {
-                AddRow(t, name, ThemeHelper.SystemColorFromSystemName(name), null, null);
+                if (ActiveFile == null)
+                {
+                    //populate from current system colors
+                    AddRow(t, name, ThemeHelper.SystemColorFromSystemName(name), null, null);
+                }
+                else
+                {
+                    if (ActiveFile.TryGetColor(name, out Color c))
+                    {
+                        AddRow(t, name, c, null, null);
+                    }
+                }
+                
             }
 
 
@@ -181,5 +193,10 @@ namespace ThemeFileEditor
         }
 
         #endregion
+
+        private void OpenButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

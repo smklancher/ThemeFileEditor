@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace ThemeFileEditor
 {
-    public partial class MDIParent1 : Form
+    public partial class ThemeEditor : Form
     {
         private int childFormNumber = 0;
 
-        public MDIParent1()
+        public ThemeEditor()
         {
             InitializeComponent();
         }
@@ -139,6 +139,27 @@ namespace ThemeFileEditor
             {
                 ((ThemeForm)ActiveMdiChild).Apply();
             }
+        }
+
+        private void MDIParent1_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ThemeEditor_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+            foreach (string file in files)
+            {
+                Form childForm = new ThemeForm(file);
+                childForm.MdiParent = this;
+                childForm.Show();
+            }
+        }
+
+        private void ThemeEditor_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop)) e.Effect = DragDropEffects.Copy;
         }
     }
 }

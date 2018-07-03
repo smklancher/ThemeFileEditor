@@ -1,0 +1,100 @@
+; Copyright © Microsoft Corp.
+
+[Theme]
+; High Contrast Black - IDS_THEME_DISPLAYNAME_HCBLACK
+DisplayName=Blue Sapphire
+ThemeId={FA952024-EA88-47AF-AD10-A4FBD71B38C5}
+
+; Computer - SHIDI_SERVER
+[CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\DefaultIcon]
+DefaultValue=%SystemRoot% X\Icons\Black Beauties ico\Computer.ico
+
+; UsersFiles - SHIDI_USERFILES
+[CLSID\{59031A47-3F72-44A7-89C5-5595FE6B30EE}\DefaultIcon]
+DefaultValue=%SystemRoot%\System32\imageres.dll,-123
+
+; Network - SHIDI_MYNETWORK
+[CLSID\{F02C1A0D-BE21-4350-88B0-7367FC96EF3C}\DefaultIcon]
+DefaultValue=%SystemRoot%\System32\imageres.dll,-25
+
+; Recycle Bin - SHIDI_RECYCLERFULL SHIDI_RECYCLER
+[CLSID\{645FF040-5081-101B-9F08-00AA002F954E}\DefaultIcon]
+Full=%SystemRoot% X\Icons\Black Beauties ico\TrashFull.ico
+Empty=%SystemRoot% X\Icons\Black Beauties ico\TrashEmpty.ico
+
+[Control Panel\Colors]
+ActiveTitle=30 100 150
+Background=0 0 0
+ButtonFace=20 20 20
+ButtonText=197 197 197
+GrayText=100 175 225
+Hilight=30 100 150
+HilightText=197 197 197
+HotTrackingColor=197 197 197
+InactiveTitle=30 100 150
+InactiveTitleText=197 197 197
+TitleText=197 197 197
+Window=20 20 20
+WindowText=197 197 197
+Scrollbar=0 0 0
+Menu=0 0 0
+WindowFrame=255 255 255
+MenuText=255 255 255
+ActiveBorder=255 255 0
+InactiveBorder=0 128 0
+AppWorkspace=0 0 0
+ButtonShadow=128 128 128
+ButtonHilight=192 192 192
+ButtonDkShadow=255 255 255
+ButtonLight=255 255 255
+InfoText=255 255 255
+InfoWindow=0 0 0
+ButtonAlternateFace=192 192 192
+GradientActiveTitle=128 0 128
+GradientInactiveTitle=0 128 0
+MenuHilight=128 0 128
+MenuBar=0 0 0
+
+[Control Panel\Cursors]
+Arrow=%SystemRoot%\Cursors\Metro X3 by exsess\Bold\StealthBlack\X3_arrow.ani
+Help=%SystemRoot%\Cursors\Metro X3 by exsess\Bold\StealthBlack\X3_help.ani
+AppStarting=%SystemRoot%\Cursors\Metro X3 by exsess\Bold\StealthBlack\X3_working.ani
+Wait=%SystemRoot%\Cursors\Metro X3 by exsess\Bold\StealthBlack\X3_busy.ani
+NWPen=%SystemRoot%\Cursors\Metro X3 by exsess\Bold\StealthBlack\X3_pen.ani
+No=%SystemRoot%\Cursors\Metro X3 by exsess\Bold\StealthBlack\X3_unavail.ani
+SizeNS=%SystemRoot%\Cursors\Metro X3 by exsess\Bold\StealthBlack\X3_ns.ani
+SizeWE=%SystemRoot%\Cursors\Metro X3 by exsess\Bold\StealthBlack\X3_ew.ani
+Crosshair=%SystemRoot%\Cursors\Metro X3 by exsess\Bold\StealthBlack\X3_precision.ani
+IBeam=%SystemRoot%\Cursors\Metro X3 by exsess\Bold\StealthBlack\X3_beam.ani
+SizeNWSE=%SystemRoot%\Cursors\Metro X3 by exsess\Bold\StealthBlack\X3_nwse.ani
+SizeNESW=%SystemRoot%\Cursors\Metro X3 by exsess\Bold\StealthBlack\X3_nesw.ani
+SizeAll=%SystemRoot%\Cursors\Metro X3 by exsess\Bold\StealthBlack\X3_move.ani
+UpArrow=%SystemRoot%\Cursors\Metro X3 by exsess\Bold\StealthBlack\X3_up.ani
+DefaultValue=
+Hand=%SystemRoot%\Cursors\Metro X3 by exsess\Bold\StealthBlack\X3_links.ani
+Link=
+
+[Control Panel\Desktop]
+Wallpaper=DesktopBackground\blue sapphire.jpg
+Pattern=
+MultimonBackgrounds=0
+PicturePosition=4
+
+[VisualStyles]
+Path=%SystemRoot%\Resources\Themes\Aero\AeroLite.msstyles
+ColorStyle=NormalColor
+Size=NormalSize
+HighContrast=3
+ColorizationColor=0
+AutoColorization=0
+VisualStyleVersion=10
+
+[boot]
+SCRNSAVE.EXE=
+
+[MasterThemeSelector]
+MTSM=RJSPBS
+
+[Sounds]
+; IDS_SCHEME_DEFAULT
+SchemeName=No Sounds

@@ -1,0 +1,167 @@
+; Copyright © Microsoft Corp.
+
+[Theme]
+; Sid's Dark Theme - IDS_THEME_DISPLAYNAME_SidDark
+DisplayName=dark-v1-by-sid
+; DisplayName=@%SystemRoot%\System32\themeui.dll,-2103
+ThemeId={C2ECE191-400F-4BC5-876D-3190EA2E1CCA}
+
+; Computer - SHIDI_SERVER
+[CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\DefaultIcon]
+DefaultValue=%SystemRoot%\System32\imageres.dll,-109
+
+; My Documents
+[CLSID\{450D8FBA-AD25-11D0-98A8-0800361B1103}\DefaultIcon]
+DefaultValue=%WinDir%SYSTEM32\mydocs.dll,0
+
+; UsersFiles - SHIDI_USERFILES
+[CLSID\{59031A47-3F72-44A7-89C5-5595FE6B30EE}\DefaultIcon]
+DefaultValue=%SystemRoot%\System32\imageres.dll,-123
+
+; Network - SHIDI_MYNETWORK
+[CLSID\{F02C1A0D-BE21-4350-88B0-7367FC96EF3C}\DefaultIcon]
+DefaultValue=%SystemRoot%\System32\imageres.dll,-25
+
+; Recycle Bin - SHIDI_RECYCLERFULL SHIDI_RECYCLER
+[CLSID\{645FF040-5081-101B-9F08-00AA002F954E}\DefaultIcon]
+Full=%SystemRoot%\System32\imageres.dll,-54
+Empty=%SystemRoot%\System32\imageres.dll,-55
+
+[Control Panel\Desktop]
+Wallpaper=DesktopBackground\wallpaper.png
+MultimonBackgrounds=0
+Pattern=
+PicturePosition=0
+
+;Background is superseded by setting a wallpaper in [Control Panel\Desktop]
+[Control Panel\Colors]
+ActiveBorder=225 225 225
+ActiveTitle=31 31 31
+AppWorkspace=31 31 31
+Background=31 31 31
+GradientActiveTitle=31 31 31
+GradientInactiveTitle=31 31 31
+GrayText=72 76 80
+Hilight=75 78 84
+HilightText=225 225 225
+HotTrackingColor=104 106 114
+InactiveBorder=0 0 0
+InactiveTitle=31 31 31
+InactiveTitleText=100 100 100
+InfoText=225 225 225
+InfoWindow=42 41 42
+Menu=41 42 41
+MenuBar=31 31 31
+MenuHilight=75 78 84
+MenuText=225 225 225
+Scrollbar=31 31 31
+TitleText=225 225 225
+Window=31 31 31
+WindowFrame=31 31 31
+WindowText=225 225 225
+
+;Buttons
+ButtonAlternateFace=31 31 31
+ButtonFace=31 31 31
+ButtonText=225 225 225
+
+ButtonHilight=75 78 84
+ButtonLight=52 52 62
+
+ButtonDkShadow=52 52 62
+ButtonShadow=75 78 84
+
+;[Control Panel\Desktop\Colors]
+;ActiveBorder=225 225 225
+;ActiveTitle=31 31 31
+;AppWorkspace=225 225 225
+;ButtonAlternateFace=192 192 192
+;ButtonDkShadow=52 52 62
+;ButtonFace=31 31 31
+;ButtonHilight=192 192 192
+;ButtonLight=52 52 62
+;ButtonShadow=128 128 128
+;ButtonText=225 225 225
+;GradientActiveTitle=31 31 31
+;GradientInactiveTitle=31 31 31
+;GrayText=72 76 80
+;Hilight=75 78 84
+;HilightText=225 225 225
+;HotTrackingColor=104 106 114
+;InactiveBorder=31 31 31
+;InactiveTitle=31 31 31
+;InactiveTitleText=100 100 100
+;InfoText=225 225 225
+;InfoWindow=42 41 42
+;Menu=41 42 41
+;MenuBar=0 225 0
+;MenuHilight=0 225 0
+;MenuText=225 225 225
+;Scrollbar=225 0 0
+;TitleText=225 225 225
+;Window=31 31 31
+;WindowFrame=31 31 31
+;WindowText=225 225 225;
+
+;[Control Panel\Desktop\WindowMetrics]
+;BorderWidth=0
+;CaptionHeight=-330
+;CaptionWidth=-330
+;IconTitleWrap=1
+;MenuHeight=-285
+;MenuWidth=-285
+;ScrollHeight=-170
+;ScrollWidth=-136
+;Shell Icon Size=32
+;SmCaptionHeight=-330
+;SmCaptionWidth=-330
+;PaddedBorderWidth=0
+;IconSpacing=-1125
+;IconVerticalSpacing=-1125
+;MinAnimate=1
+
+[Control Panel\Cursors]
+AppStarting=%SystemRoot%\Cursors\Obsidian Small\working.ani
+Arrow=%SystemRoot%\Cursors\Obsidian Small\normal.cur
+Crosshair=%SystemRoot%\Cursors\Obsidian Small\precision.cur
+DefaultValue=Obsidian
+Hand=%SystemRoot%\Cursors\Obsidian Small\link.cur
+Help=%SystemRoot%\Cursors\Obsidian Small\help.cur
+IBeam=%SystemRoot%\Cursors\Obsidian Small\text.cur
+Link=
+NWPen=%SystemRoot%\Cursors\Obsidian Small\handwriting.cur
+No=%SystemRoot%\Cursors\Obsidian Small\unavailable.cur
+SizeAll=%SystemRoot%\Cursors\Obsidian Small\move.cur
+SizeNESW=%SystemRoot%\Cursors\Obsidian Small\diagonal2.cur
+SizeNS=%SystemRoot%\Cursors\Obsidian Small\vertical.cur
+SizeNWSE=%SystemRoot%\Cursors\Obsidian Small\diagonal1.cur
+SizeWE=%SystemRoot%\Cursors\Obsidian Small\horizontal.cur
+UpArrow=%SystemRoot%\Cursors\Obsidian Small\alternate.cur
+Wait=%SystemRoot%\Cursors\Obsidian Small\busy.ani
+
+[VisualStyles]
+Path=%SystemRoot%\Resources\Themes\Aero\AeroLite.msstyles
+ColorStyle=NormalColor
+Size=NormalSize
+AutoColorization=0
+ColorizationColor=0
+HighContrast=3
+VisualStyleVersion=10
+
+;[SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize]
+;AppsUseLightTheme 0
+;ColorPrevalance 1
+;EnableBlurBehind 1
+;EnableTransparency 1
+;SpecialColor 544e4b
+;SystemUsesLightTheme 0
+
+[boot]
+SCRNSAVE.EXE=
+
+[MasterThemeSelector]
+MTSM=RJSPBS
+
+[Sounds]
+; IDS_SCHEME_DEFAULT
+SchemeName=@mmres.dll,-800

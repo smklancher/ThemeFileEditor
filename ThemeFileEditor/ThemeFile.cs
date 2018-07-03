@@ -72,7 +72,7 @@ namespace ThemeFileEditor
         public bool TryGetColor(string name, out Color c)
         {
             string tname = ThemeHelper.ThemeNameFromSystemName(name);
-            if (!String.IsNullOrEmpty(tname))
+            if (Colors.ContainsKey(tname))
             {
                 c=ThemeHelper.RgbSpacedToColor(Colors[tname]);
                 return true;
