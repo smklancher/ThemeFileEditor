@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,11 +13,58 @@ namespace ThemeFileEditor
 {
     public partial class ThemeEditor : Form
     {
-        private int childFormNumber = 0;
-
         public ThemeEditor()
         {
             InitializeComponent();
+        }
+
+        public ThemeForm ActiveThemeForm
+        {
+            get
+            {
+                if (ActiveMdiChild is ThemeForm)
+                {
+                    return (ThemeForm)ActiveMdiChild;
+                }
+                return null;
+            }
+        }
+
+        private void Save()
+        {
+            if (ActiveThemeForm == null) {return;}
+
+            if (string.IsNullOrEmpty(ActiveThemeForm.FileName))
+            {
+                SaveAs();
+            }
+            else
+            {
+                ActiveThemeForm.Save();
+            }
+        }
+
+
+        private void SaveAs()
+        {
+            if (ActiveThemeForm == null) { return; }
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            if (string.IsNullOrEmpty(ActiveThemeForm.FileName))
+            {
+                saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Resources);
+            }
+            else
+            {
+                saveFileDialog.FileName = ActiveThemeForm.FileName;
+            }
+
+            saveFileDialog.Filter = "Theme Files (*.theme)|*.theme|All Files (*.*)|*.*";
+            if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
+            {
+                string FileName = saveFileDialog.FileName;
+                ActiveThemeForm.SaveAs(FileName);
+            }
         }
 
         private void ShowNewForm(object sender, EventArgs e)
@@ -28,8 +76,21 @@ namespace ThemeFileEditor
 
         private void OpenFile(object sender, EventArgs e)
         {
+            const string openpath = @"C:\WorkingCopy\ThemeFileEditor\Themes";
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Resources);
+
+            if (File.Exists(openpath))
+            {
+                openFileDialog.InitialDirectory = openpath;
+            }else if (File.Exists(ActiveThemeForm?.FileName))
+            {
+                openFileDialog.InitialDirectory = Path.GetDirectoryName(ActiveThemeForm.FileName);
+            }
+            else
+            {
+                openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Resources);
+            }
+
             openFileDialog.Filter = "Theme Files (*.theme)|*.theme|All Files (*.*)|*.*";
             if (openFileDialog.ShowDialog(this) == DialogResult.OK)
             {
@@ -39,25 +100,11 @@ namespace ThemeFileEditor
                 childForm.Show();
             }
 
-            
         }
 
         private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Resources);
-            saveFileDialog.Filter = "Theme Files (*.theme)|*.theme|All Files (*.*)|*.*";
-            if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
-            {
-                string FileName = saveFileDialog.FileName;
-
-                if (ActiveMdiChild is ThemeForm)
-                {
-                    ((ThemeForm)ActiveMdiChild).SaveAs(FileName);
-                }
-            }
-
-
+            SaveAs();
         }
 
         private void ExitToolsStripMenuItem_Click(object sender, EventArgs e)
@@ -115,36 +162,6 @@ namespace ThemeFileEditor
             }
         }
 
-        private void MDIParent1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (ActiveMdiChild is ThemeForm)
-            {
-                ((ThemeForm)ActiveMdiChild).Save();
-            }
-        }
-
-        private void applyToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (ActiveMdiChild is ThemeForm)
-            {
-                ((ThemeForm)ActiveMdiChild).Apply();
-            }
-        }
-
-        private void MDIParent1_Load_1(object sender, EventArgs e)
-        {
-
-        }
 
         private void ThemeEditor_DragDrop(object sender, DragEventArgs e)
         {
@@ -160,6 +177,30 @@ namespace ThemeFileEditor
         private void ThemeEditor_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop)) e.Effect = DragDropEffects.Copy;
+        }
+
+        private void saveToolStripButton_Click(object sender, EventArgs e)
+        {
+            Save();
+        }
+
+        private void toolStripButtonApply_Click(object sender, EventArgs e)
+        {
+            if (ActiveThemeForm == null) { return; }
+
+            ActiveThemeForm.Apply();
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Save();
+        }
+
+        private void toolStripButtonTestForm_Click(object sender, EventArgs e)
+        {
+            Form childForm = new Form1();
+            childForm.MdiParent = this;
+            childForm.Show();
         }
     }
 }

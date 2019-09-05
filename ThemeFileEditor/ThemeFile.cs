@@ -30,6 +30,7 @@ namespace ThemeFileEditor
         {
             FileName = file;
             var parser = new FileIniDataParser();
+            //TODO: decide how to handle parse error
             data = parser.ReadFile(file);
         }
 
@@ -67,6 +68,19 @@ namespace ThemeFileEditor
                     key.Comments.Add($"No theme property known for system name {name}");
                 }
             }
+        }
+
+        public List<Color> GetColorList()
+        {
+            var list = new List<Color>();
+
+            foreach (var c in Colors)
+            {
+                //c.
+                //TODO: create ThemeColor class to standardize all color references
+            }
+
+            return list;
         }
 
         public bool TryGetColor(string name, out Color c)

@@ -71,9 +71,11 @@
             this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButtonApply = new System.Windows.Forms.ToolStripButton();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.toolStripButtonTestForm = new System.Windows.Forms.ToolStripButton();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -143,6 +145,7 @@
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.saveToolStripMenuItem.Text = "&Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // saveAsToolStripMenuItem
             // 
@@ -396,7 +399,9 @@
             this.newToolStripButton,
             this.openToolStripButton,
             this.saveToolStripButton,
-            this.toolStripSeparator1});
+            this.toolStripSeparator1,
+            this.toolStripButtonApply,
+            this.toolStripButtonTestForm});
             this.toolStrip.Location = new System.Drawing.Point(0, 24);
             this.toolStrip.Name = "toolStrip";
             this.toolStrip.Size = new System.Drawing.Size(632, 25);
@@ -431,11 +436,22 @@
             this.saveToolStripButton.Name = "saveToolStripButton";
             this.saveToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.saveToolStripButton.Text = "Save";
+            this.saveToolStripButton.Click += new System.EventHandler(this.saveToolStripButton_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButtonApply
+            // 
+            this.toolStripButtonApply.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonApply.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonApply.Image")));
+            this.toolStripButtonApply.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonApply.Name = "toolStripButtonApply";
+            this.toolStripButtonApply.Size = new System.Drawing.Size(82, 22);
+            this.toolStripButtonApply.Text = "Apply Theme";
+            this.toolStripButtonApply.Click += new System.EventHandler(this.toolStripButtonApply_Click);
             // 
             // statusStrip
             // 
@@ -453,6 +469,16 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
             // 
+            // toolStripButtonTestForm
+            // 
+            this.toolStripButtonTestForm.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonTestForm.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonTestForm.Image")));
+            this.toolStripButtonTestForm.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonTestForm.Name = "toolStripButtonTestForm";
+            this.toolStripButtonTestForm.Size = new System.Drawing.Size(63, 22);
+            this.toolStripButtonTestForm.Text = "Test Form";
+            this.toolStripButtonTestForm.Click += new System.EventHandler(this.toolStripButtonTestForm_Click);
+            // 
             // ThemeEditor
             // 
             this.AllowDrop = true;
@@ -466,7 +492,6 @@
             this.MainMenuStrip = this.menuStrip;
             this.Name = "ThemeEditor";
             this.Text = "Theme Editor";
-            this.Load += new System.EventHandler(this.MDIParent1_Load_1);
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.ThemeEditor_DragDrop);
             this.DragEnter += new System.Windows.Forms.DragEventHandler(this.ThemeEditor_DragEnter);
             this.menuStrip.ResumeLayout(false);
@@ -526,6 +551,8 @@
         private System.Windows.Forms.ToolStripButton openToolStripButton;
         private System.Windows.Forms.ToolStripButton saveToolStripButton;
         private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.ToolStripButton toolStripButtonApply;
+        private System.Windows.Forms.ToolStripButton toolStripButtonTestForm;
     }
 }
 

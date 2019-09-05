@@ -24,6 +24,7 @@ namespace ThemeFileEditor
         {
             InitializeComponent();
             ActiveFile = new ThemeFile(themeFile);
+            this.Text = themeFile;
         }
 
         #region Display
@@ -76,10 +77,7 @@ namespace ThemeFileEditor
                         AddRow(t, name, c, null, null);
                     }
                 }
-                
             }
-
-
 
             //pad the rest with autosize row
             t.RowStyles.Add(new RowStyle(SizeType.AutoSize));
@@ -135,7 +133,7 @@ namespace ThemeFileEditor
             }
             t.Controls.Add(con2, 3, t.RowCount);
 
-            t.RowCount = t.RowCount + 1;
+            t.RowCount++;
         }
         #endregion
 
@@ -158,22 +156,14 @@ namespace ThemeFileEditor
             }
             
         }
-
-        private void SaveButton_Click(object sender, EventArgs e)
-        {
-            ThemeFile t = new ThemeFile();
-            t.SaveAs(@"C:\temp\systemthemetest.theme");
-        }
-
+        
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.SuspendLayout();
             RefreshThemeDisplay();
+            this.ResumeLayout();
         }
-
-        private void ApplyButton_Click(object sender, EventArgs e)
-        {
-            ActiveFile.Apply();
-        }
+        
 
         #region FileActions
 
@@ -192,11 +182,12 @@ namespace ThemeFileEditor
             ActiveFile.Apply();
         }
 
-        #endregion
-
-        private void OpenButton_Click(object sender, EventArgs e)
+        public string FileName
         {
-
+            get { return ActiveFile.FileName; }
         }
+
+        #endregion
+        
     }
 }
